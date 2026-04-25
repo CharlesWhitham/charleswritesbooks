@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How Tatterhood became Tatwitt, and why the American Southwest was always the right setting for this story. By Charles Whitham.">
+  <title>Why I Wrote a Norwegian Folktale Set in Las Vegas — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --dark:       #0a0a0a;
+      --dark-2:     #111111;
+      --dark-3:     #1a1a1a;
+      --text:       #e8e0d0;
+      --text-muted: #9a9080;
+      --border:     rgba(201,168,76,0.2);
+      --border-solid: rgba(201,168,76,0.35);
+      --nav-height: 68px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 20px;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* ---- NAV ---- */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      height: var(--nav-height);
+      background: rgba(10,10,10,0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+
+    .nav-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-back {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ---- ARTICLE HEADER ---- */
+    .article-header {
+      padding-top: calc(var(--nav-height) + 5rem);
+      padding-bottom: 4rem;
+      background: var(--dark-2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    .article-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-subtitle {
+      font-size: 22px;
+      color: #b8b0a0;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .article-date {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .article-author {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .article-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--border-solid);
+    }
+
+    /* ---- ARTICLE BODY ---- */
+    .article-body {
+      padding: 5rem 0 7rem;
+    }
+
+    .article-body-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.75rem;
+      color: #c8c0b0;
+    }
+
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2.5rem;
+    }
+
+    .article-body .lead {
+      font-size: 22px;
+      color: #d8d0c0;
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ---- ARTICLE FOOTER ---- */
+    .article-footer {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+
+    .article-footer-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .back-btn {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-solid);
+      padding: 14px 24px;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+
+    .free-book-cta {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      background: var(--gold);
+      color: #0a0a0a;
+      transition: background 0.2s;
+    }
+    .free-book-cta:hover { background: var(--gold-light); }
+
+    /* ---- SITE FOOTER ---- */
+    footer {
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner { padding: 0 1.75rem; }
+      .article-body-inner { padding: 0 1.75rem; }
+      .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Essay</div>
+      <h1 class="article-title">Why I Wrote a Norwegian Folktale Set in Las Vegas</h1>
+      <p class="article-subtitle">How Tatterhood became Tatwitt, and why the American Southwest was always the right setting for this story.</p>
+      <div class="article-meta">
+        <span class="article-date">April 25, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <p class="lead">I've always been drawn to the stubborn ones.</p>
+
+      <p>In Norwegian folklore, there's a tale about a princess named Tatterhood. She rides a goat. She carries a wooden spoon. She's ugly, loud, and utterly unbothered by what anyone thinks of her. While her beautiful sister weeps and waits to be rescued, Tatterhood charges into danger, beats back trolls, and generally refuses to behave like a princess is supposed to. She's not the prize. She's the hero. And she's weird.</p>
+
+      <p>The first time I read her story, I felt something click into place. Here was a folk hero who didn't need a makeover or a lesson in humility. She just needed a stage big enough to hold her.</p>
+
+      <p>So I started wondering: what would Tatterhood look like in 21st-century America? And more importantly — where would she go? I myself had never heard of the story and was surprised by what a good set of bones the story had underneath it.</p>
+
+      <h2>From Tatterhood to Tatwitt</h2>
+
+      <p>The name "Tatterhood" was an obstacle. I couldn't use it. So I thought her name would be Talia, like Emily did. Then I got the idea of the full body birth marks that looked like tattoos and realized "Tat" was part of Tatterhood and tattoo. Then I thought she would be smart so "wit." I put them together and came up with Tatwitt.</p>
+
+      <p>Which took a bit of getting used to, but it sounded better than Tatterhood. It sounded wrong in the best way — grating, ridiculous, unforgettable. Like someone who'd get kicked out of a casino for yelling at a slot machine.</p>
+
+      <p>Tatwitt kept the goat (it's a beat-up motorcycle named Goat, because some things are sacred). She kept the spoon (reimagined as something else — maybe you'll see). But most importantly, she kept the attitude: the refusal to be pretty, the refusal to be quiet, the refusal to let the world tell her what kind of story she was in.</p>
+
+      <h2>Why Las Vegas?</h2>
+
+      <p>I know. A Norwegian folktale belongs in fjords and forests, in cold mist and darker waters. That's the obvious choice. But folktales were never about the obvious. They were about edges — places where civilization frays and something older seeps through.</p>
+
+      <p>Las Vegas is an edge. It's a city built on luck and desperation, where the desert reclaims what isn't fiercely defended. The neon is bright because the dark is so close. That tension — glitter against grit, wealth against ruin, performance against truth — felt exactly right for a story about a woman who refuses to perform.</p>
+
+      <p>And the Southwest itself? It's full of Tatterhoods. People who came here running from something, or toward something, or just because they couldn't fit anywhere else. The desert doesn't ask you to be beautiful. It asks you to endure.</p>
+
+      <h2>What This Story Is Actually About</h2>
+
+      <p>At its heart, this isn't a story about Norway or Vegas. It's about the women we don't write fairy tales for — the loud ones, the strange ones, the ones who make people uncomfortable. The ones who don't get chosen. Tatterhood was always that woman. Tatwitt is just her latest incarnation.</p>
+
+      <p>I wrote this because I needed to believe that the stubborn ones still get to be the hero. That you can ride your goat through the casino, spoon in hand, and win on your own ridiculous terms.</p>
+
+      <p>I hope you'll come meet her.</p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="free-book.html" class="free-book-cta">Get the Free Novella →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
