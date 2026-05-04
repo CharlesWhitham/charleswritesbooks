@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="There is a very specific kind of loneliness that comes from watching your football team score a game-winning touchdown while the rest of the world is asleep. By Charles Whitham.">
+  <title>Screaming at the TV at 3 A.M. — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --dark:       #0a0a0a;
+      --dark-2:     #111111;
+      --dark-3:     #1a1a1a;
+      --text:       #e8e0d0;
+      --text-muted: #9a9080;
+      --border:     rgba(201,168,76,0.2);
+      --border-solid: rgba(201,168,76,0.35);
+      --nav-height: 68px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 20px;
+      line-height: 1.85;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      height: var(--nav-height);
+      background: rgba(10,10,10,0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+    }
+
+    .nav-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .nav-back {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    .article-header {
+      padding-top: calc(var(--nav-height) + 5rem);
+      padding-bottom: 4rem;
+      background: var(--dark-2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-header-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    .article-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 58px;
+      font-weight: 700;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-subtitle {
+      font-size: 22px;
+      color: #b8b0a0;
+      font-style: italic;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .article-date {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .article-author {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .article-divider {
+      width: 1px;
+      height: 14px;
+      background: var(--border-solid);
+    }
+
+    .article-body {
+      padding: 5rem 0 7rem;
+    }
+
+    .article-body-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+
+    .article-body p {
+      margin-bottom: 1.75rem;
+      color: #c8c0b0;
+    }
+
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.15;
+      margin-top: 3.5rem;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2.5rem;
+    }
+
+    .article-body .lead {
+      font-size: 22px;
+      color: #d8d0c0;
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .article-body a {
+      color: var(--gold);
+      border-bottom: 1px solid var(--border-solid);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .article-body a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+    figure {
+      margin: 2.5rem 0;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+
+    figure img {
+      width: 100%;
+      display: block;
+      filter: brightness(0.92);
+    }
+
+    figcaption {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #9a9080;
+      padding: 0.75rem 1rem;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .article-footer {
+      background: var(--dark-2);
+      border-top: 1px solid var(--border);
+      padding: 4rem 0;
+    }
+
+    .article-footer-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .back-btn {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-solid);
+      padding: 14px 24px;
+      transition: background 0.2s;
+    }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+
+    .free-book-cta {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      background: var(--gold);
+      color: #0a0a0a;
+      transition: background 0.2s;
+    }
+    .free-book-cta:hover { background: var(--gold-light); }
+
+    footer {
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner { padding: 0 1.75rem; }
+      .article-body-inner { padding: 0 1.75rem; }
+      .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Personal Essay</div>
+      <h1 class="article-title">Screaming at the TV at 3 A.M.: A Chiefs Fan in Japan</h1>
+      <p class="article-subtitle">There is a very specific kind of loneliness that comes from watching your football team score a game-winning touchdown while the rest of the world is asleep.</p>
+      <div class="article-meta">
+        <span class="article-date">May 5, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <figure>
+        <img src="images/_DSC7357-2.jpg" alt="Charles Whitham — Chiefs fan in Japan">
+        <figcaption>Excelsior Springs, Missouri — a long way from Funabashi, Japan.</figcaption>
+      </figure>
+
+      <p class="lead">There is a very specific kind of loneliness that comes from watching your football team score a game-winning touchdown while the rest of the world is asleep.</p>
+
+      <p>I'm from Excelsior Springs, Missouri — a town where Friday night lights and Chiefs Sunday were the rhythm of life. I grew up in a place where the red and gold ran deep. I learned the names of Chiefs players before I could tie my shoes. Arrowhead Stadium was a special place with tailgating, barbecue, and collective breath-holding.</p>
+
+      <p>Now I live in Japan.</p>
+
+      <p>And when the Kansas City Chiefs take the field, I am not surrounded by fifty friends wearing the same jersey. I am not at a sports bar high-fiving strangers. I am in a small bedroom in my house, three cups of black tea deep, staring at the TV screen in the dark, trying not to wake my wife or neighbors.</p>
+
+      <p>The math is brutal. A 12:00 PM kickoff in Kansas City is 3:00 AM the next day for me. Prime time games? I'm lucky if they start before five in the morning. I have alarms on my phone labeled "Game 1, Game 2, and Game 3," and I have learned to hate them and love them in equal measure.</p>
+
+      <p>But the hardest part isn't the sleep deprivation. It isn't the bleary-eyed commute to work on a Monday after a playoff game or Super Bowl victory. It's the silence.</p>
+
+      <p>When Travis Kelce breaks a tackle and rumbles into the end zone, I still jump out of the chair in my room. I still pump my fist. I still yell, but with no actual voice behind it. And the yell dies in my bedroom. There is no one to grab my shoulder and scream in my face. There is no one to pass me a brat, or more importantly, hand me a tissue when it all falls apart.</p>
+
+      <p>I have celebrated Super Bowl victories alone at dawn, watching the confetti fall through a screen while the sun rose over Tokyo and the trains began to hum outside my window. I have also sat in stunned, aching silence after brutal losses, with no one to help carry the weight of the defeat. Just me and the slow realization that I have to be a functional adult in three hours.</p>
+
+      <figure>
+        <img src="images/_DSC7361.jpg" alt="Charles Whitham in his Chiefs jersey">
+        <figcaption>Every win feels a little bit like mine. Because I earned it one bleary sunrise at a time.</figcaption>
+      </figure>
+
+      <p>Being a fan from this distance has changed what football means to me. It isn't about the crowd anymore. It isn't about the communal experience — at least, not the physical one. It's about loyalty. It's about staying connected to a place that raised me, even when that place is an ocean and a continent away. Every time I pull on that Mahomes jersey in the middle of the night, I'm not just rooting for a team. I'm reminding myself where I come from. I'm keeping a piece of Missouri alive in a country that doesn't know what a first down is.</p>
+
+      <p>And honestly? That stubborn, sleep-deprived dedication has made every win feel more personal. Every trophy feels a little bit like mine, because I earned it in my own small way, one bleary sunrise at a time.</p>
+
+      <p>If you're reading this and you've ever loved something so much you were willing to lose sleep over it, to look a little ridiculous for it, to feel isolated by it but refuse to let it go, then you understand.</p>
+
+      <figure>
+        <img src="images/_DSC7365.jpg" alt="Charles Whitham — Chiefs fan">
+        <figcaption>Go Chiefs. Always.</figcaption>
+      </figure>
+
+      <p>I carry that same stubborn, hometown love into the stories I write. The same heart that refuses to abandon the Chiefs just because I moved across the world is the same one that built the worlds in my novels, Sheffield and Tatwitt. If this post resonated with you — if you felt that pull of home, that ache of distance, or that stubborn joy of fandom — you might find something familiar in those pages.</p>
+
+      <p>You can find <a href="https://www.amazon.com/dp/B0GG57W6WP" target="_blank" rel="noopener">Sheffield on Amazon</a> and <a href="https://www.amazon.com/dp/B0GTJ1D3FQ" target="_blank" rel="noopener">Tatwitt on Amazon</a>. You can also stop by <a href="https://charleswritesbooks.quest/">charleswritesbooks.quest</a> to see what else I'm working on. No pressure at all. But if you do decide to pick one up, know that you're supporting a kid from Excelsior Springs who is still figuring out how to bridge the gap between where he started and where he ended up.</p>
+
+      <p>One chapter, and one 3 A.M. kickoff, at a time.</p>
+
+      <p><strong style="font-family:'Rajdhani',sans-serif;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);font-size:16px;">Go Chiefs.</strong></p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="free-book.html" class="free-book-cta">Get the Free Novella →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
