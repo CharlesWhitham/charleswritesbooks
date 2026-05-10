@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A first look at The Emotion Engine, Charles Whitham's third novel — a science fiction story about survival, emotional absence, and a hostile alien world.">
+  <title>A First Look at The Emotion Engine — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #c9a84c; --gold-light: #e8c97a; --dark: #0a0a0a; --dark-2: #111111;
+      --dark-3: #1a1a1a; --text: #e8e0d0; --text-muted: #9a9080;
+      --border: rgba(201,168,76,0.2); --border-solid: rgba(201,168,76,0.35); --nav-height: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.85; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: var(--nav-height); background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
+    .nav-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-back { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .article-header { padding-top: calc(var(--nav-height) + 5rem); padding-bottom: 4rem; background: var(--dark-2); border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-label { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 700; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+    .article-subtitle { font-size: 22px; color: #b8b0a0; font-style: italic; line-height: 1.7; margin-bottom: 2rem; }
+    .article-meta { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .article-date, .article-author { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
+    .article-divider { width: 1px; height: 14px; background: var(--border-solid); }
+    .article-body { padding: 5rem 0 7rem; }
+    .article-body-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-body p { margin-bottom: 1.75rem; color: #c8c0b0; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.15; margin-top: 3.5rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; }
+    .article-body .lead { font-size: 22px; color: #d8d0c0; font-style: italic; line-height: 1.75; margin-bottom: 2.5rem; }
+    .article-body .signature { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--gold); margin-top: 2.5rem; }
+    figure { margin: 2.5rem 0; border: 1px solid rgba(201,168,76,0.2); }
+    figure img { width: 100%; display: block; filter: brightness(0.92); }
+    figcaption { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9080; padding: 0.75rem 1rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .article-footer { background: var(--dark-2); border-top: 1px solid var(--border); padding: 4rem 0; }
+    .article-footer-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .back-btn { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border-solid); padding: 14px 24px; transition: background 0.2s; }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+    .free-book-cta { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 15px 28px; background: var(--gold); color: #0a0a0a; transition: background 0.2s; }
+    .free-book-cta:hover { background: var(--gold-light); }
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; letter-spacing: 0.05em; }
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner, .article-body-inner, .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Novel Update</div>
+      <h1 class="article-title">A First Look at My Third Novel: The Emotion Engine</h1>
+      <p class="article-subtitle">A science fiction story about survival, emotional absence, and a hostile alien world — and why it might be the most personal thing I've written.</p>
+      <div class="article-meta">
+        <span class="article-date">May 10, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <figure>
+        <img src="images/xplanet.jpg" alt="An alien world — violet skies, frozen plains, distant moons">
+        <figcaption>The world of The Emotion Engine — obsidian plains, violet skies, and storms that could tear a hull apart.</figcaption>
+      </figure>
+
+      <p class="lead">If you've been following along with my work, you know I tend to gravitate toward stories that explore the edges of human experience — those liminal spaces where technology, isolation, and identity collide.</p>
+
+      <p>I'm excited to share that my third novel, <em>The Emotion Engine</em>, is well underway and taking shape in ways that have even surprised me.</p>
+
+      <p>This one is science fiction again, but not the shiny, optimistic kind. <em>The Emotion Engine</em> follows Shaden Stewart, a solo mission commander sent through a wormhole to a distant, hostile planet on behalf of E.S.T.A. (the Earth Space and Time Agency). His vessel, The Sunbridge, deposits him on a world of frozen obsidian plains, violet skies, and storms that could tear the hull apart. The atmosphere is barely breathable. The wildlife is actively predatory. And Shaden? Shaden is trying to figure out why he can't feel much of anything at all.</p>
+
+      <p>What begins as a standard planetary survey quickly unravels into something stranger. Shaden discovers he's not the first human to set foot here. He finds the remnants of another camp, a damaged enviro-pod, and encrypted data drives marked with the initials H.R. and the symbol of a maroon hourglass. As Shaden pieces together logs — while being stalked by a massive apex predator he's taken to calling the velokai — he's forced to confront questions that have nothing to do with geology or atmospheric readings.</p>
+
+      <figure>
+        <img src="images/ChatGPT_Image_May_10__2026__12_13_19_PM.png" alt="The velokai — apex predator of the alien world">
+        <figcaption>The velokai. Named because naming is easier than feeling.</figcaption>
+      </figure>
+
+      <h2>What This Story Is Really About</h2>
+
+      <p>This is a story about emotional absence as much as physical survival. Shaden is a man who has spent his life treating experiences as data points. He eats because he needs fuel. He observes alien creatures with scientific detachment. He names things — hexlings, velokai, dinnerlings — because naming is easier than feeling. But this planet has a way of pressing against that armor. Whether it's the dream he has after eating cooked hexling meat (his first dream, he realizes), or the moment he hears voice data logs and finds himself smiling before he's even processed her words, the environment is doing something to him. Changing him.</p>
+
+      <h2>Where the Manuscript Stands</h2>
+
+      <p>Right now, the manuscript sits at five solid chapters, with a fully developed glossary and world-building framework in place. The planet has its own ecology, its own rules, and its own mysteries — including a sealed metal door in a cave system that may hold answers about why this world made contact with Earth in the first place. There's also the lingering presence of T.I.M.E., a dismantled criminal organization whose involvement raises the stakes from simple exploration to something far more conspiratorial.</p>
+
+      <p>I'm deep in the trenches with this one, and it's been a joy to write. The voice is different from my previous work. It's sparser, colder in places, but hopefully rewarding for readers who stick with Shaden as he learns to thaw.</p>
+
+      <figure>
+        <img src="images/Emtion_Engine_wrap_simplified_black_text.jpg" alt="The Emotion Engine — cover art">
+        <figcaption>The Emotion Engine — coming November 2026.</figcaption>
+      </figure>
+
+      <p>I don't have a release date to share just yet — maybe around November — but the engine is running, and we're building momentum. I'll be posting updates as I move deeper into the second act, where Shaden's search for the fate of the other explorer — and for whatever is locked behind that cave door — pushes him further from his ship and closer to the heart of this planet.</p>
+
+      <p>Thank you for your patience, and for following along. This one means a lot to me.</p>
+
+      <p class="signature">—Charles</p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="free-book.html" class="free-book-cta">Get the Free Novella →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
