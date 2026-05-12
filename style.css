@@ -1,6 +1,6 @@
 /* ============================================================
    CHARLES WHITHAM — AUTHOR WEBSITE
-   charleswritesbooks.quest
+   charleswritesbooks.com
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap');
@@ -184,9 +184,7 @@ a { color: inherit; }
   position: relative;
 }
 
-.hero-left::after {
-  display: none;
-}
+.hero-left::after { display: none; }
 
 .hero-eyebrow {
   font-family: 'Rajdhani', sans-serif;
@@ -287,9 +285,7 @@ a { color: inherit; }
   align-items: start;
 }
 
-.book-cover-wrap {
-  width: 160px;
-}
+.book-cover-wrap { width: 160px; }
 
 .book-cover-wrap img {
   width: 100%;
@@ -585,13 +581,24 @@ a { color: inherit; }
   background: var(--dark-3);
   border-top: 1px solid var(--border);
   padding: 8rem 0;
-  text-align: center;
 }
 
 .giveaway-inner {
-  max-width: 680px;
+  max-width: 860px;
   margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
 }
+
+.giveaway-cover-wrap { flex-shrink: 0; }
+
+.giveaway-cover-img {
+  width: 200px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.7);
+}
+
+.giveaway-text { flex: 1; }
 
 .giveaway-title {
   font-family: 'Cormorant Garamond', serif;
@@ -612,9 +619,6 @@ a { color: inherit; }
   font-style: italic;
   margin-bottom: 3rem;
   line-height: 1.75;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* ---- FOOTER ---- */
@@ -697,9 +701,7 @@ footer {
   gap: 1.5rem;
 }
 
-.contact-detail-item .fact-label {
-  margin-bottom: 0.3rem;
-}
+.contact-detail-item .fact-label { margin-bottom: 0.3rem; }
 
 .contact-form-wrap {
   display: flex;
@@ -802,6 +804,7 @@ footer {
   .book-cover-wrap { max-width: 220px; }
   .reviews-grid { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .giveaway-inner { flex-direction: column; gap: 2.5rem; text-align: center; }
   .giveaway-title { font-size: 44px; }
   .hero-books { gap: 1.5rem; justify-content: center; }
   .book-img-hero,
