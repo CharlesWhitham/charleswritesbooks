@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="After four covers and two years, Sheffield finally has the cover it deserves. Here's the full story of how we got here — and why I kept starting over.">
+  <title>Why I Changed the Sheffield Cover (Four Times) — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #c9a84c; --gold-light: #e8c97a; --dark: #0a0a0a; --dark-2: #111111;
+      --dark-3: #1a1a1a; --text: #e8e0d0; --text-muted: #9a9080;
+      --border: rgba(201,168,76,0.2); --border-solid: rgba(201,168,76,0.35); --nav-height: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.85; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: var(--nav-height); background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
+    .nav-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-back { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+
+    /* HEADER */
+    .article-header { padding-top: calc(var(--nav-height) + 5rem); padding-bottom: 4rem; background: var(--dark-2); border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-label { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 700; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+    .article-subtitle { font-size: 22px; color: #b8b0a0; font-style: italic; line-height: 1.7; margin-bottom: 2rem; }
+    .article-meta { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .article-date, .article-author { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
+    .article-divider { width: 1px; height: 14px; background: var(--border-solid); }
+
+    /* BODY */
+    .article-body { padding: 5rem 0 7rem; }
+    .article-body-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-body p { margin-bottom: 1.75rem; color: #c8c0b0; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.15; margin-top: 3.5rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; }
+    .article-body .lead { font-size: 22px; color: #d8d0c0; font-style: italic; line-height: 1.75; margin-bottom: 2.5rem; }
+    .article-body .signature { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--gold); margin-top: 2.5rem; }
+
+    /* SLIDES — full-width portrait images with caption */
+    .slide-figure { margin: 3rem 0; }
+    .slide-figure img { width: 100%; max-width: 520px; margin: 0 auto; display: block; border: 1px solid var(--border); }
+    .slide-caption { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding: 0.75rem 0 0; text-align: center; max-width: 520px; margin: 0 auto; border-top: 1px solid var(--border); margin-top: 0; }
+
+    /* COVER GRID — side by side comparison */
+    .cover-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin: 3rem 0; }
+    .cover-grid-item { display: flex; flex-direction: column; gap: 0; }
+    .cover-grid-item img { width: 100%; border: 1px solid var(--border); }
+    .cover-grid-label { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); padding: 0.6rem 0; border-top: 1px solid var(--border); }
+
+    /* PULLQUOTE */
+    .pullquote { border-left: 2px solid var(--gold); padding: 0.5rem 0 0.5rem 2rem; margin: 2.5rem 0; }
+    .pullquote p { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; color: var(--text); line-height: 1.5; margin: 0; }
+
+    /* ARTICLE FOOTER */
+    .article-footer { background: var(--dark-2); border-top: 1px solid var(--border); padding: 4rem 0; }
+    .article-footer-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .back-btn { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border-solid); padding: 14px 24px; transition: background 0.2s; }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+    .free-book-cta { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 15px 28px; background: var(--gold); color: #0a0a0a; transition: background 0.2s; }
+    .free-book-cta:hover { background: var(--gold-light); }
+
+    /* FOOTER */
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; letter-spacing: 0.05em; }
+
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner, .article-body-inner, .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      .cover-grid { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Behind the Scenes</div>
+      <h1 class="article-title">Why I Changed the Sheffield Cover (Four Times)</h1>
+      <p class="article-subtitle">After four covers and two years, Sheffield finally has the cover it deserves. Here's the full story of how we got here — and why I kept starting over.</p>
+      <div class="article-meta">
+        <span class="article-date">June 1, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <p class="lead">A book cover is supposed to be the first sentence of the story. It doesn't need to explain everything — it needs to make you want to know more. For two years, Sheffield's cover failed that test. I knew it. I just didn't know what to do about it.</p>
+
+      <p>Last week I finally changed it. And because I believe in transparency about the creative process — the messy, iterative, frequently embarrassing parts of it — I want to walk you through every version that came before, and explain why each one wasn't quite right.</p>
+
+      <div class="slide-figure">
+        <img src="images/sheffield-cover-slide-01.png" alt="Sheffield cover change announcement slide">
+        <p class="slide-caption">The announcement — May 2026</p>
+      </div>
+
+      <h2>Cover One: The Forest</h2>
+
+      <p>The very first Sheffield cover was AI-generated, back before that phrase carried the weight it does now. I was working with early image generation tools, and honestly — I loved it at the time. A boy walking toward a glowing door in the forest at dusk. It had atmosphere. It had mystery. It felt like the beginning of something.</p>
+
+      <p>What it didn't have was specificity. The forest could have been any forest. The door could have opened onto anything. Nothing about the image told you this was a story about parallel worlds, time travel, a death cult, a fifteen-year-old trying to find his way home. It was beautiful and vague, and beauty without meaning is just decoration.</p>
+
+      <div class="slide-figure">
+        <img src="images/sheffield-cover-slide-02.png" alt="The original forest cover">
+        <p class="slide-caption">Cover One — The Forest</p>
+      </div>
+
+      <h2>Cover Two: Adding the City</h2>
+
+      <p>My first instinct was to add context rather than start over. The story is about a boy pulled from his present into a desolate future — so I replaced the trees in the background with a glimpsed future city. The portal now opened onto something. You could feel the contrast between the wild, dark foreground and the distant civilisation on the other side.</p>
+
+      <p>It was better. But it was also doing too much work. A cover that requires explanation is a cover that isn't quite finished. The city felt added, because it was added — and readers can sense that kind of visual compromise even when they can't articulate why.</p>
+
+      <div class="slide-figure">
+        <img src="images/sheffield-cover-slide-03.png" alt="The city cover iteration">
+        <p class="slide-caption">Cover Two — Added City Background</p>
+      </div>
+
+      <h2>Cover Three: The Canva Experiment</h2>
+
+      <p>At some point I decided the problem was the AI imagery itself — that I needed to build something from scratch rather than iterate on a generated image. So I opened Canva and spent a weekend making a cover that was entirely my own work. No generation, no AI, just composition tools and stock elements and my own creative judgment.</p>
+
+      <p>The result was technically mine and aesthetically wrong. It had a portal made of light and green lightning, which looked striking on a slide but felt generic on a book cover — like a hundred other sci-fi novels I'd seen on the same Amazon page. It didn't feel like Sheffield. It felt like <em>science fiction</em>, which is a different thing entirely.</p>
+
+      <div class="slide-figure">
+        <img src="images/sheffield-cover-slide-04.png" alt="The first Canva cover">
+        <p class="slide-caption">Cover Three — The Canva Version</p>
+      </div>
+
+      <div class="pullquote">
+        <p>"It didn't feel like Sheffield. It felt like science fiction — which is a different thing entirely."</p>
+      </div>
+
+      <h2>Cover Four: Returning to AI, Getting Closer</h2>
+
+      <p>I came back to AI generation with a clearer brief. I wanted the darkness of the original forest image but with something hidden in it — a detail that rewarded attention. I generated the "Blackout" version: that same moody silhouette in the doorway, but with a small hourglass tucked into the shadows. A nod to the time travel at the heart of the book, visible only if you looked.</p>
+
+      <p>This was the version that ran on the first edition. And it was good. I was proud of it. It captured the feel of the story better than anything before it. But something still nagged at me — the cover was about atmosphere, not about the actual <em>conflict</em> of the book. Sheffield's world isn't just dark forests and hidden doors. It's two realities pulling against each other. Ice and fire. Past and future. The version of your father you know, and the stranger who looks exactly like him.</p>
+
+      <div class="slide-figure">
+        <img src="images/sheffield-cover-slide-05.png" alt="The return to AI blackout cover">
+        <p class="slide-caption">Cover Four — Back to AI, The Blackout Version</p>
+      </div>
+
+      <h2>Before the Reveal: Which Was Your Favourite?</h2>
+
+      <p>Before I showed anyone the final cover, I posted the four previous versions and asked readers to vote. Which one had been closest? Which one had them most curious about the story?</p>
+
+      <p>The responses were genuinely useful — and genuinely split. Some people loved the original forest. Others felt the Blackout version was the strongest. Almost nobody picked the Canva cover, which vindicated several sleepless nights of doubt. The feedback confirmed what I already suspected: the covers I'd made were all reaching for the same thing, and none of them had quite landed it.</p>
+
+      <div class="cover-grid">
+        <div class="cover-grid-item">
+          <img src="images/sheffield-cover-slide-06.png" alt="Cover comparison slide">
+          <div class="cover-grid-label">The Poll — Four Candidates</div>
+        </div>
+        <div class="cover-grid-item">
+          <img src="images/sheffield-cover-slide-08.png" alt="Final cover reveal slide">
+          <div class="cover-grid-label">The Reveal — Final Cover</div>
+        </div>
+      </div>
+
+      <h2>The Final Cover</h2>
+
+      <p>The new cover is the one that finally shows you both worlds at once. Two figures — Sheffield and his double — standing at the boundary of two realities that mirror and oppose each other. Ice and fire. Night and day. The yin-yang structure isn't accidental: the book is fundamentally about duality, about what happens when two versions of the same life exist simultaneously and have to decide which one is real.</p>
+
+      <p>When I first saw this image, something settled. Not relief exactly — more like recognition. This was the cover that Sheffield had been waiting for. It doesn't just suggest the story. It <em>is</em> the story, compressed into a single image.</p>
+
+      <div class="slide-figure">
+        <img src="images/sheffield-cover-slide-07.png" alt="The final Sheffield cover">
+        <p class="slide-caption">The Final Cover — Sheffield Second Edition</p>
+      </div>
+
+      <p>The new cover is live now on Amazon, on my website, and everywhere else Sheffield appears. If you've had the old cover on your device, the eBook will update automatically. The paperback is already printing with the new art.</p>
+
+      <p>If you haven't read Sheffield yet — well, now you know what you're getting into. Two worlds. Two days to get home. One cover that finally tells the truth about what's inside.</p>
+
+      <p class="signature">—Charles</p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="https://www.amazon.com/dp/B0GG57W6WP" target="_blank" rel="noopener" class="free-book-cta">Get Sheffield on Amazon →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
