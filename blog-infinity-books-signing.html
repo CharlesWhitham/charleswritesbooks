@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Sunday in Asakusa — Charles Whitham</title>
+  <meta name="description" content="A recap of the May 31st book signing and Q&A at Infinity Books, Asakusa — the first in-person author event for Charles Whitham.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-dim: rgba(201,168,76,0.18);
+      --bg: #111111;
+      --bg-card: #181818;
+      --text: #e8e0d0;
+      --text-muted: rgba(232,224,208,0.5);
+      --border: rgba(201,168,76,0.2);
+      --border-solid: rgba(201,168,76,0.4);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(17,17,17,0.96);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-back {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ARTICLE LAYOUT */
+    .article-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 120px 2rem 80px;
+    }
+
+    /* HEADER */
+    .article-label {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .article-subtitle {
+      font-family: 'Crimson Pro', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+      line-height: 1.6;
+    }
+    .article-meta {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 3rem;
+    }
+    .article-meta span { color: var(--gold); margin: 0 0.5rem; }
+
+    /* BODY TEXT */
+    .article-body p {
+      margin-bottom: 1.6rem;
+      color: var(--text);
+    }
+    .article-body h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 400;
+      color: var(--text);
+      margin: 3rem 0 1.2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* FIGURES */
+    figure {
+      margin: 2.5rem 0;
+      border: 1px solid var(--border-solid);
+      padding: 6px;
+      background: var(--bg-card);
+    }
+    figure img {
+      width: 100%;
+      display: block;
+    }
+    figcaption {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.7rem 0.5rem 0.4rem;
+      text-align: center;
+    }
+
+    /* TWO-UP GRID */
+    .fig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .fig-grid figure {
+      margin: 0;
+    }
+
+    /* THREE-UP GRID */
+    .fig-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .fig-grid-3 figure {
+      margin: 0;
+    }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-left: 3px solid var(--gold);
+      padding: 1rem 0 1rem 2rem;
+      margin: 2.5rem 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* FOOTER CTA */
+    .article-footer {
+      margin-top: 4rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-back {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 12px 24px;
+      transition: all 0.2s;
+    }
+    .btn-back:hover { color: var(--gold); border-color: var(--gold); }
+    .btn-novella {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--gold);
+      text-decoration: none;
+      padding: 12px 28px;
+      transition: opacity 0.2s;
+    }
+    .btn-novella:hover { opacity: 0.85; }
+
+    @media (max-width: 600px) {
+      .fig-grid, .fig-grid-3 { grid-template-columns: 1fr; }
+      .article-footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <div class="article-wrap">
+
+    <div class="article-label">Event Recap</div>
+    <h1 class="article-title">A Sunday in Asakusa</h1>
+    <p class="article-subtitle">The first signing, a bookshop cat named Oska, two readers named Masako, and the best biryani in Tokyo.</p>
+    <div class="article-meta">
+      June 1, 2026 <span>·</span> Charles Whitham <span>·</span> Infinity Books, Asakusa
+    </div>
+
+    <div class="article-body">
+
+      <p>I've been writing for a long time. Long enough to know that the gap between finishing a book and putting it in someone's hands — a real person, standing right in front of you — is wider than it looks. On Sunday, May 31st, that gap closed a little. For two hours at Infinity Books in Asakusa, I got to do something I've wanted to do for years: sit across from readers, sign books, and talk about the stories I've spent years building.</p>
+
+      <p>It was a small event. Twenty people, maybe, in a shop that fits that number perfectly. And it was exactly right.</p>
+
+      <figure>
+        <img src="images/blog/signing-infinity-exterior.jpg" alt="Infinity Books storefront at night, Asakusa">
+        <figcaption>The front of Infinity Books, Asakusa — "Books: Your reward for having an attention span."</figcaption>
+      </figure>
+
+      <h2>Getting There</h2>
+
+      <p>Infinity Books sits in a quiet residential pocket of Asakusa, a short walk from Honjo Azumabashi Station on the Toei Asakusa Line. It's the kind of neighbourhood that feels unhurried — wide brick sidewalks, the occasional cyclist, the hum of the city just far enough away. You take Exit A1, turn right, and follow the road until the Infinity Books sandwich board appears outside a low building. Easy to miss if you're not looking. Worth looking for.</p>
+
+      <div class="fig-grid">
+        <figure>
+          <img src="images/blog/signing-station-exit.jpg" alt="Honjo Azumabashi Station Exit A1">
+          <figcaption>Exit A1 — Honjo Azumabashi Station</figcaption>
+        </figure>
+        <figure>
+          <img src="images/blog/signing-infinity-sign.jpg" alt="Infinity Books sandwich board outside the building">
+          <figcaption>The Infinity Books sign outside the building entrance</figcaption>
+        </figure>
+      </div>
+
+      <h2>The Shop</h2>
+
+      <p>If you've never been to Infinity Books, I'll try to describe it: floor-to-ceiling shelves of English-language books, a warm wooden bar counter with high stools, a Yorkshire Tea banner on the wall, a tablet for searching the catalogue, and — depending on the time of day and how crowded it is — a large orange cat named Oska folded somewhere into the shelves.</p>
+
+      <p>Oska was a stray. The shop took him in, and for a while he wanted nothing to do with the people who filled it. Gradually, on his own terms, he came around. He'll tolerate you now, maybe even acknowledge you, as long as things stay calm. When the room gets busy, he disappears into the shelves and watches from a distance. I respect that about him.</p>
+
+      <div class="fig-grid">
+        <figure>
+          <img src="images/blog/signing-interior-counter.jpg" alt="Inside Infinity Books — the bar counter and shelves">
+          <figcaption>The counter at Infinity Books</figcaption>
+        </figure>
+        <figure>
+          <img src="images/blog/signing-oska.jpg" alt="Oska the bookshop cat, peering from a shelf cubby">
+          <figcaption>Oska — the shop cat, on his own terms</figcaption>
+        </figure>
+      </div>
+
+      <figure>
+        <img src="images/blog/signing-shelves.jpg" alt="Bookshelves inside Infinity Books">
+        <figcaption>Inside Infinity Books — shelves packed with English-language fiction, nonfiction, and more</figcaption>
+      </figure>
+
+      <h2>The Setup</h2>
+
+      <p>I spent the day before the event doing a trial run at home — staging the table, testing the candles and fairy lights, arranging the bookmarks and signage. There's something both silly and necessary about that kind of rehearsal. You want to walk in on the day feeling settled, not scrambling.</p>
+
+      <p>The actual table came together well. Both books stacked, pricing signs up, the bookmark display out front, and a framed event poster in the middle. Behind it all, the guitars and instruments that live in that corner of the shop. I hadn't planned for them to be in the background, but they ended up being a perfect frame.</p>
+
+      <div class="fig-grid">
+        <figure>
+          <img src="images/blog/signing-staging-home.jpg" alt="Trial setup at home the day before the event">
+          <figcaption>The night before — staging at home</figcaption>
+        </figure>
+        <figure>
+          <img src="images/blog/signing-table-setup.jpg" alt="Author table setup at Infinity Books with both books, candles, and fairy lights">
+          <figcaption>The table at Infinity Books, ready to go</figcaption>
+        </figure>
+      </div>
+
+      <p>The shop had also prepared a beautiful display table near the entrance — both books on wooden easels, alongside the event flyer. Seeing your work treated that way, set out with care in a real bookshop, doesn't get old.</p>
+
+      <figure>
+        <img src="images/blog/signing-store-display.jpg" alt="Infinity Books display table with Sheffield and Tatwitt on easels">
+        <figcaption>The store's display — Sheffield and Tatwitt on the shelves of Infinity Books</figcaption>
+      </figure>
+
+      <h2>The Afternoon</h2>
+
+      <p>About twenty people came through over the two hours. Some had found the event through the store, some through the website, some through word of mouth. There were conversations about the books, about writing in Japan, about what it means to publish independently. People picked up both Sheffield and Tatwitt. Some picked up both.</p>
+
+      <p>My son Christian came. He's a good sport about his father's author events, and I was glad he was there.</p>
+
+      <figure>
+        <img src="images/blog/signing-christian.jpg" alt="Christian at the event table">
+        <figcaption>Christian, holding down the table</figcaption>
+      </figure>
+
+      <div class="pull-quote">
+        Two women named Masako came to the event. One bought Tatwitt. One bought Sheffield. They didn't plan it that way.
+      </div>
+
+      <p>Two of the readers who came were both named Masako — which I didn't know until they were standing together at the table, each holding one of my books. One had Tatwitt, one had Sheffield. They hadn't coordinated it. That kind of moment is why you do events.</p>
+
+      <figure>
+        <img src="images/blog/signing-two-masakos.jpg" alt="Charles with both readers named Masako, each holding one of his books">
+        <figcaption>Two readers, both named Masako — one copy of Sheffield, one copy of Tatwitt</figcaption>
+      </figure>
+
+      <p>Signing books is a small ritual, but it matters. You write a name, a few words, your signature — and the book becomes slightly different from every other copy. That particular book belongs to that particular person now. I signed a copy of Tatwitt at the bar counter, bookshelves rising behind us, and thought: this is what it's supposed to look like.</p>
+
+      <div class="fig-grid">
+        <figure>
+          <img src="images/blog/signing-handoff.jpg" alt="Charles handing over a signed copy of Tatwitt">
+          <figcaption>Handing over a signed copy</figcaption>
+        </figure>
+        <figure>
+          <img src="images/blog/signing-inscription.jpg" alt="Close-up of a signed Tatwitt inscription">
+          <figcaption>The inscription — "To Masako, Thanks So Much"</figcaption>
+        </figure>
+      </div>
+
+      <h2>After</h2>
+
+      <p>When the event wrapped, my wife Mayumi and I walked to Erick South for biryani — the kind of meal that earns its own paragraph. Then later, drinks at Thomas Bar Edison + Music in the neighbourhood, where a DJ was spinning under blue neon and the night felt like a proper ending to a good day.</p>
+
+      <div class="fig-grid">
+        <figure>
+          <img src="images/blog/signing-biryani.jpg" alt="Biryani at Erick South after the event">
+          <figcaption>Post-event biryani at Erick South</figcaption>
+        </figure>
+        <figure>
+          <img src="images/blog/signing-thomas-bar.jpg" alt="Thomas Bar Edison and Music, neon sign">
+          <figcaption>Thomas Bar Edison + Music — a good way to end the day</figcaption>
+        </figure>
+      </div>
+
+      <h2>Thank You</h2>
+
+      <p>To everyone who came out on May 31st — thank you. To the team at Infinity Books for hosting so warmly, for the display table, for Oska's reluctant but genuine hospitality — thank you. This was the first, and there will be more.</p>
+
+      <p>If you missed it and you're in Tokyo, Infinity Books is worth a visit any day of the week. You can find them near Honjo Azumabashi Station, Asakusa, Sumida-ku. They carry new and used English-language books and they know what they're doing.</p>
+
+      <p>Sheffield and Tatwitt are both available on Amazon. If you'd like a signed copy, get in touch through the contact form — I'm happy to arrange it.</p>
+
+    </div>
+
+    <div class="article-footer">
+      <a href="index.html#blog" class="btn-back">← Back to Blog</a>
+      <a href="free-book.html" class="btn-novella">Get the Free Novella →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
