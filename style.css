@@ -597,9 +597,74 @@ a { color: inherit; }
   padding: 7rem 0;
 }
 
+/* Featured post */
+.blog-card-featured {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border);
+  padding: 3rem;
+  margin-bottom: 3rem;
+  transition: border-color 0.2s;
+  background: var(--dark-3);
+}
+.blog-card-featured:hover { border-color: var(--border-solid); }
+
+.blog-featured-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-featured-tag {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: var(--gold);
+  padding: 3px 10px;
+}
+
+.blog-featured-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+  transition: color 0.2s;
+}
+.blog-card-featured:hover .blog-featured-title { color: var(--gold); }
+
+.blog-featured-excerpt {
+  font-size: 18px;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.8;
+  max-width: 780px;
+  margin-bottom: 1.75rem;
+}
+
+.blog-read-more {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border-solid);
+  padding-bottom: 2px;
+  display: inline-block;
+  transition: color 0.2s, border-color 0.2s;
+}
+.blog-card-featured:hover .blog-read-more { color: var(--gold-light); border-color: var(--gold-light); }
+
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 3rem;
 }
 
@@ -861,6 +926,8 @@ footer {
   .book-cover-wrap { max-width: 220px; }
   .reviews-grid { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .blog-card-featured { padding: 2rem; }
+  .blog-featured-title { font-size: 30px; }
   .giveaway-inner { flex-direction: column; gap: 2.5rem; text-align: center; }
   .giveaway-title { font-size: 44px; }
   .hero-books { gap: 1.5rem; justify-content: center; }
