@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I feel everything, all the time. I carry strangers' emotions for days after they've forgotten them. So why did I give my protagonist the one thing I've never had — the ability to feel nothing at all?">
+  <title>The Hardest Character I've Ever Written Is the One Who Can't Feel — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #c9a84c; --gold-light: #e8c97a; --dark: #0a0a0a; --dark-2: #111111;
+      --dark-3: #1a1a1a; --text: #e8e0d0; --text-muted: #9a9080;
+      --border: rgba(201,168,76,0.2); --border-solid: rgba(201,168,76,0.35); --nav-height: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.85; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: var(--nav-height); background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
+    .nav-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-back { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .article-header { padding-top: calc(var(--nav-height) + 5rem); padding-bottom: 4rem; background: var(--dark-2); border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-label { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 700; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+    .article-subtitle { font-size: 22px; color: #b8b0a0; font-style: italic; line-height: 1.7; margin-bottom: 2rem; }
+    .article-meta { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .article-date, .article-author { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
+    .article-divider { width: 1px; height: 14px; background: var(--border-solid); }
+    .article-body { padding: 5rem 0 7rem; }
+    .article-body-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-body p { margin-bottom: 1.75rem; color: #c8c0b0; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.15; margin-top: 3.5rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; }
+    .article-body .lead { font-size: 22px; color: #d8d0c0; font-style: italic; line-height: 1.75; margin-bottom: 2.5rem; }
+    .article-body .signature { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--gold); margin-top: 2.5rem; }
+    figure { margin: 2.5rem 0; border: 1px solid rgba(201,168,76,0.2); }
+    figure img { width: 100%; display: block; filter: brightness(0.92); }
+    figcaption { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9080; padding: 0.75rem 1rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .article-footer { background: var(--dark-2); border-top: 1px solid var(--border); padding: 4rem 0; }
+    .article-footer-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .back-btn { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border-solid); padding: 14px 24px; transition: background 0.2s; }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+    .free-book-cta { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 15px 28px; background: var(--gold); color: #0a0a0a; transition: background 0.2s; }
+    .free-book-cta:hover { background: var(--gold-light); }
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; letter-spacing: 0.05em; }
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner, .article-body-inner, .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Novel Update</div>
+      <h1 class="article-title">The Hardest Character I've Ever Written Is the One Who Can't Feel</h1>
+      <p class="article-subtitle">Shaden processes the world as data. I process it as a flood. Writing him has meant unlearning myself, one chapter at a time.</p>
+      <div class="article-meta">
+        <span class="article-date">June 20, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <p class="lead">I am, for better or worse, something of an empath. I read a room before I've finished walking into it. If you are upset, I will know before you've said a word about it. And the strange part isn't the noticing — it's the keeping. Someone can have a hard moment with me, move on, and forget it within the hour. I will carry it for days.</p>
+
+      <p>So it's a little absurd, in hindsight, that I sat down to write a protagonist who feels almost nothing at all.</p>
+
+      <p>Shaden Stewart is a man who logs a planetary storm system the way someone else might log a grocery list. He names a herd of six-legged alien creatures within minutes of seeing them, because naming is a task, and tasks are comfortable. He eats a meal he isn't sure he enjoyed, and notes that fact into his recorder with the same flat tone he uses for soil composition. Alarms blare warnings that he could die in the next ten minutes, and he listens to them, in my own description of him, the way someone listens to rain on a roof.</p>
+
+      <p>I wrote that line myself. I have never once in my life been able to listen to anything that calmly.</p>
+
+      <h2>Borrowing a Numbness I've Never Had</h2>
+
+      <figure>
+        <img src="images/shadenwalking.jpg" alt="Shaden walking alone across the violet plain of an alien world">
+        <figcaption>Shaden, alone on the plain — cataloguing everything, feeling none of it. At least not yet.</figcaption>
+      </figure>
+
+      <p>Here is the actual difficulty, and it is not a craft problem in the way pacing or plot structure are craft problems. It is something closer to an impersonation I have to keep performing, sentence by sentence, for an entire novel. I have to imagine what it would be like to watch a predator circle on the horizon and not let my pulse change. I have to imagine setting a communications beacon during an oncoming lightning storm and noting, calmly, that I have twenty-nine minutes, the way Shaden does, rather than what I would actually be doing in that moment, which is spiraling.</p>
+
+      <p>Every page of Shaden is a page where I have to actively suppress the instinct that runs my entire life. I read the emotional temperature of a room for a living, basically — friends, students, strangers on a train. Writing Shaden means writing a man who either can't read that temperature or refuses to, and doing it convincingly enough that the reader believes he isn't just suppressing something, the way I would be. He genuinely doesn't have the word for it yet.</p>
+
+      <h2>The Door That Breaks Him</h2>
+
+      <figure>
+        <img src="images/shadenarriving.jpg" alt="Shaden approaching the alien spire structure under a violet sky">
+        <figcaption>Arriving at the spires — still cataloguing, still narrating in field-log monotone.</figcaption>
+      </figure>
+
+      <p>There's a sequence later in the manuscript, after Shaden has used a breakpak charge to blow a sealed door off its track and made his way down through a lift into a buried chamber lit by glowing fungus. Along one wall there's a series of murals, painted by a civilization that doesn't exist anymore, showing their world the way it used to be — green, populated, alive — and then showing, mural by mural, what happened to it. A dying sun. An evacuation. A planet emptied out and left purple and frozen, which is the very planet Shaden is now standing on.</p>
+
+      <figure>
+        <img src="images/shadendoor.jpg" alt="Shaden at the breached door leading into the buried chamber">
+        <figcaption>The door the breakpak opened. Past it, the murals — and the first crack in Shaden's narration.</figcaption>
+      </figure>
+
+      <p>He stands in front of the final mural, the one showing the world at its peak, right before everything started going wrong, and I wrote this line: <em>Shaden stood and began to feel feelings he had no name for.</em></p>
+
+      <p>That sentence took me a long time to be willing to write, because it's the first time in the book Shaden admits, even to himself, that something is happening to him that his training never prepared him for. And I had to sit with what that would actually feel like for a man who has never had to name a feeling in his life — not relief, not grief, not even hunger beyond "I should eat now." I had to imagine the feeling arriving in him as something foreign. A visitor. Something he has no internal vocabulary to process, because for me, vocabulary for feeling has never been the problem. I have always had too much of it. I have whole rooms of it I didn't ask for.</p>
+
+      <h2>What I Keep Learning From Him</h2>
+
+      <p>I won't pretend I've solved this. Every chapter, I have to talk myself back down into Shaden's register — flat, procedural, observational — and away from my own, which wants to narrate everything, including a man's interior collapse, with far too much feeling. The instinct to write what I would feel, rather than what he would, is constant. I delete a lot of sentences that are too warm for him. I have to keep reminding myself that his silence is the character, not a withholding from me as the author.</p>
+
+      <p>But there is something I didn't expect going into this book, which is that writing a man who can't feel has made me think harder about what I do with all the feeling I carry. Shaden doesn't have the luxury of holding someone else's bad day for a week after they've forgotten it. I'm not sure, some days, that it's a luxury at all. Writing him hasn't made me want to be more like him. If anything it's made me grateful, in a complicated way, that I'm not.</p>
+
+      <p>Still. I understand him a little better with every chapter. And I think that understanding is going to matter a great deal by the time he reaches the end of this book.</p>
+
+      <p class="signature">—Charles</p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="free-book.html" class="free-book-cta">Get the Free Novella →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
