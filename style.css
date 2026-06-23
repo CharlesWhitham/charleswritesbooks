@@ -333,6 +333,7 @@ a { color: inherit; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
+  align-items: start;
 }
 
 .book-card {
