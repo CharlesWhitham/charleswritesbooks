@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Designing the wildlife of The Emotion Engine meant building a whole food chain for a world its own people abandoned: the six-legged hexlings, the velokai that hunts them, and the scrappion in the tunnels below.">
+  <title>You Can't Just Invent One Animal — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #c9a84c; --gold-light: #e8c97a; --dark: #0a0a0a; --dark-2: #111111;
+      --dark-3: #1a1a1a; --text: #e8e0d0; --text-muted: #9a9080;
+      --border: rgba(201,168,76,0.2); --border-solid: rgba(201,168,76,0.35); --nav-height: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.85; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: var(--nav-height); background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
+    .nav-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-back { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .article-header { padding-top: calc(var(--nav-height) + 5rem); padding-bottom: 4rem; background: var(--dark-2); border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-label { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 700; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+    .article-subtitle { font-size: 22px; color: #b8b0a0; font-style: italic; line-height: 1.7; margin-bottom: 2rem; }
+    .article-meta { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .article-date, .article-author { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
+    .article-divider { width: 1px; height: 14px; background: var(--border-solid); }
+    .article-body { padding: 5rem 0 7rem; }
+    .article-body-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-body p { margin-bottom: 1.75rem; color: #c8c0b0; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.15; margin-top: 3.5rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; }
+    .article-body .lead { font-size: 22px; color: #d8d0c0; font-style: italic; line-height: 1.75; margin-bottom: 2.5rem; }
+    .article-body .signature { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--gold); margin-top: 2.5rem; }
+    figure { margin: 2.5rem 0; border: 1px solid rgba(201,168,76,0.2); }
+    figure img { width: 100%; display: block; filter: brightness(0.92); }
+    figcaption { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9080; padding: 0.75rem 1rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .article-footer { background: var(--dark-2); border-top: 1px solid var(--border); padding: 4rem 0; }
+    .article-footer-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .back-btn { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border-solid); padding: 14px 24px; transition: background 0.2s; }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+    .free-book-cta { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 15px 28px; background: var(--gold); color: #0a0a0a; transition: background 0.2s; }
+    .free-book-cta:hover { background: var(--gold-light); }
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; letter-spacing: 0.05em; }
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner, .article-body-inner, .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Novel Update</div>
+      <h1 class="article-title">You Can't Just Invent One Animal</h1>
+      <p class="article-subtitle">Designing the wildlife of The Emotion Engine meant building a whole food chain for a world its own people abandoned.</p>
+      <div class="article-meta">
+        <span class="article-date">July 5, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <p class="lead">Here is something nobody warns you about when you sit down to invent alien wildlife: you cannot invent just one animal. The moment you put a single creature on the ground, it starts asking questions you have to answer. What does it eat? What eats it? Where does it hide, and what is it hiding from?</p>
+
+      <p>The planet in The Emotion Engine is not a friendly place. Its own people built cities there, and then, for reasons Shaden spends most of the book piecing together, they left. Evacuated the entire world. What they did not take with them was the wildlife. The animals stayed. Life kept going without anyone to watch it, and by the time Shaden arrives, the plains and the ruins and the tunnels underneath have all been quietly claimed by things that were never asked to leave.</p>
+
+      <p>So when I started designing that wildlife, I could not just draw one interesting monster and call it a day. I had to build a chain. Something to graze, something to hunt the grazers, and something living in a corner of the world the other two never touch. Three creatures so far. Here is how each of them came to be, and what building the second one taught me about the first.</p>
+
+      <h2>The Hexlings</h2>
+
+      <figure>
+        <img src="images/hexling.jpg" alt="A six-legged grazing animal standing on a purple volcanic plain beneath a violet sun">
+        <figcaption>The plains hexling. Six legs, built for open ground, and the first creature Shaden bothers to name.</figcaption>
+      </figure>
+
+      <p>The hexlings came first, and they came first for Shaden too. He names them within minutes of seeing them, because naming is a task and tasks are where he feels safe. The name is exactly as literal as he is: hex, for six. Six legs. A grazing animal, roughly the size and temperament of an antelope, built low and steady for covering open ground under a purple sun.</p>
+
+      <p>For a long time there was only one kind of hexling. Then the world got bigger than I planned, and so did they. There are two breeds now. The larger ones still roam the plains, out in the open where they have always been. But a smaller breed has done something I did not expect until I sat down and really thought about where an animal goes when the people vanish: they have moved into the cities. The empty streets, the collapsed buildings, the shade and shelter of everything the old civilization left behind. The ruins are not empty. They are full of small hexlings that have decided the safest place on the planet is the one nobody else wants.</p>
+
+      <h2>The Velokai</h2>
+
+      <figure>
+        <img src="images/velokai.png" alt="A large black feathered predator with a cluster of eyes, poised on an alien plain under a purple sky">
+        <figcaption>The velokai. Feathered, fast, many-eyed, and the reason nothing grazes the plains for long.</figcaption>
+      </figure>
+
+      <p>Once I had something grazing the plains, I needed something to hunt it. A prey animal with no predator is not really a prey animal. It is just an animal, and the plains felt too safe.</p>
+
+      <p>The velokai is the answer. It is the apex predator of the open ground: feathered, fast, and wrong in a way I struggled to describe until I saw it rendered. Too many eyes, clustered where two should be, so it never quite looks at you and never quite looks away. It runs hexlings down across the plains the way the old murals in the caves show it always has. Predator and prey, painted on a wall by hands that have been dust for thousands of years, still playing out on the ground above.</p>
+
+      <p>Here is the small ecological accident I love. The velokai hunts the plains. It does not go into the cities. Which means the smaller hexlings, the ones that gave up the open ground for the ruins, may have stumbled into the one place on the planet the fastest thing alive cannot reach them. They did not outrun the predator. They just moved somewhere it will not follow.</p>
+
+      <h2>The Scrappion</h2>
+
+      <figure>
+        <img src="images/scrappion.jpg" alt="An armored, cat-sized creature with a curved venomous tail standing in a field of glowing lava">
+        <figcaption>The scrappion. Cat-sized, moves in packs, and keeps its venom in its tail. It lives in the volcanic tunnels below the surface.</figcaption>
+      </figure>
+
+      <p>The scrappion is the newest, and it is still finding its place in the world. It does not live on the plains at all. It lives underneath them, in the volcanic tunnel systems that run below the surface, where the heat is and the light is not.</p>
+
+      <p>It is small, about the size of a cat, which is easy to underestimate right up until you notice there is never only one. Scrappions move in packs. Each one carries its venom in its tail, curled and ready, which is where the name came from: a scrappy, scrapping, scorpion-tailed thing that fights in numbers and lives somewhere nothing sensible would go. It belongs to a different world than the hexlings and the velokai, a hotter and darker one, and building it meant building a whole second biome underneath the first.</p>
+
+      <h2>The Names</h2>
+
+      <p>A quick word on the names, because they are not mine. Not really. They are Shaden's.</p>
+
+      <p>Every creature in this book gets its name from a man who names things instead of feeling them. That was a rule I set early, and it turned out to shape everything. Hexling is what a methodical, emotionally flat scientist calls a six-legged animal with a recorder running. Scrappion is the same instinct pointed at something with a stinger. They are functional names, descriptive names, the names of someone cataloguing a world rather than falling in love with it. Velokai is the one exception, the name that does not announce what it means, and I let it stay strange on purpose. Some things on that planet Shaden names. A few he only gestures at, because even he can tell they are older than his vocabulary for them.</p>
+
+      <h2>Why Any of This Matters</h2>
+
+      <p>None of this is the plot. A reader could skim past every creature in the book and still follow the story just fine. But the world would feel thinner, and I would know. Building a food chain nobody strictly needs is the kind of work that does not show up on the page so much as underneath it, holding everything else up.</p>
+
+      <p>Three creatures down. I suspect the tunnels are hiding more than the scrappion, and I suspect I will not know what until I go down there with Shaden and find out. The book is still on track for November 2026. The ecosystem, apparently, is still growing.</p>
+
+      <p class="signature">—Charles</p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="free-book.html" class="free-book-cta">Get the Free Novella →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
