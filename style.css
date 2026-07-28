@@ -523,6 +523,12 @@ a { color: inherit; }
 
 .book-cover-wrap { width: 160px; }
 
+/* Homepage book cards use larger 220px covers on desktop.
+   Scoped to .books-section so other pages are unaffected, and so the
+   mobile media query can collapse these to a single column. */
+.books-section .book-card { grid-template-columns: 220px 1fr; }
+.books-section .book-cover-wrap { width: 220px; }
+
 .book-cover-wrap img {
   width: 100%;
   display: block;
@@ -1108,8 +1114,8 @@ footer {
   .nav-links a { display: block; padding: 1rem 2rem; border: none; }
   .nav-links a.nav-cta { border: none; }
   .books-grid { gap: 3rem; }
-  .book-card { grid-template-columns: 1fr; }
-  .book-cover-wrap { max-width: 220px; }
+  .books-section .book-card { grid-template-columns: 1fr; }
+  .books-section .book-cover-wrap { width: auto; max-width: 220px; }
   .reviews-grid { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; gap: 2rem; }
   .blog-card-featured { padding: 2rem; }
