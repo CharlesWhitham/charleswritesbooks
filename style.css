@@ -24,7 +24,7 @@
   --nav-height:    68px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 
 body {
   background: var(--dark);
@@ -32,7 +32,7 @@ body {
   font-family: 'Crimson Pro', Georgia, serif;
   font-size: 18px;
   line-height: 1.75;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -1122,11 +1122,13 @@ footer {
   .blog-featured-title { font-size: 30px; }
   .giveaway-inner { flex-direction: column; gap: 2.5rem; text-align: center; }
   .giveaway-title { font-size: 44px; }
-  .hero-books { gap: 1.5rem; justify-content: center; }
+  .hero-right { padding: 3rem 1.25rem; }
+  .hero-books { gap: 0.5rem; justify-content: center; flex-wrap: nowrap; }
   .book-img-hero,
   .book-img-hero.featured {
-    width: 42vw;
-    max-width: 160px;
+    width: 26vw;
+    max-width: 100px;
+    min-width: 0;
     height: auto;
   }
   .footer-inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
