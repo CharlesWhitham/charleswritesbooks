@@ -1072,9 +1072,14 @@ footer {
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 1024px) {
+  /* Below this width the hero stacks and the banner text wraps to several
+     lines. Take the banner out of the fixed layer so its real height pushes
+     the hero down instead of covering it; body reserves space for the nav. */
+  body { padding-top: var(--nav-height); }
+  .event-banner { position: static; }
   .event-grid { grid-template-columns: 1fr; gap: 3rem; }
   .event-visual { order: -1; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 2.5rem; }
   .hero-left { padding: 5rem 3rem; }
   .hero-left::after { display: none; }
   .hero-right { padding: 4rem 3rem; border-top: 1px solid var(--border); }
