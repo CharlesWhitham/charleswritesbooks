@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sheffield was mine from the ground up. The two books that came after it belonged to somebody else first. On a childhood spent in the folklore section, a teenage Dungeons and Dragons table, and the two forgotten tales hiding underneath Tatwitt and The Emotion Engine.">
+  <title>The Author Who Went Forth to Learn What to Write — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #c9a84c; --gold-light: #e8c97a; --dark: #0a0a0a; --dark-2: #111111;
+      --dark-3: #1a1a1a; --text: #e8e0d0; --text-muted: #9a9080;
+      --border: rgba(201,168,76,0.2); --border-solid: rgba(201,168,76,0.35); --nav-height: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.85; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: var(--nav-height); background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
+    .nav-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-back { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .article-header { padding-top: calc(var(--nav-height) + 5rem); padding-bottom: 4rem; background: var(--dark-2); border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-label { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 700; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+    .article-subtitle { font-size: 22px; color: #b8b0a0; font-style: italic; line-height: 1.7; margin-bottom: 2rem; }
+    .article-meta { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .article-date, .article-author { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
+    .article-divider { width: 1px; height: 14px; background: var(--border-solid); }
+    .article-body { padding: 5rem 0 7rem; }
+    .article-body-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-body p { margin-bottom: 1.75rem; color: #c8c0b0; }
+    .article-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; color: var(--text); line-height: 1.15; margin-top: 3.5rem; margin-bottom: 1.5rem; border-top: 1px solid var(--border); padding-top: 2.5rem; }
+    .article-body .lead { font-size: 22px; color: #d8d0c0; font-style: italic; line-height: 1.75; margin-bottom: 2.5rem; }
+    .article-body .signature { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--gold); margin-top: 2.5rem; }
+    figure { margin: 2.5rem 0; border: 1px solid rgba(201,168,76,0.2); }
+    figure img { width: 100%; display: block; filter: brightness(0.92); }
+    figcaption { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9080; padding: 0.75rem 1rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .article-footer { background: var(--dark-2); border-top: 1px solid var(--border); padding: 4rem 0; }
+    .article-footer-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .back-btn { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border-solid); padding: 14px 24px; transition: background 0.2s; }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+    .free-book-cta { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 15px 28px; background: var(--gold); color: #0a0a0a; transition: background 0.2s; }
+    .free-book-cta:hover { background: var(--gold-light); }
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; letter-spacing: 0.05em; }
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner, .article-body-inner, .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Behind the Books</div>
+      <h1 class="article-title">The Author Who Went Forth to Learn What to Write</h1>
+      <p class="article-subtitle">Sheffield was mine from the ground up. The two books that came after it belonged to somebody else first.</p>
+      <div class="article-meta">
+        <span class="article-date">August 29, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <p class="lead">Fee-fi-fo-fum.</p>
+
+      <p>You already know the next line. So does almost everyone else reading this, and none of us can remember being taught it. That is the strange thing about the oldest stories. They get into people early and they stay, long after we have forgotten which book they came from or who read them out loud to us.</p>
+
+      <p>I have been chasing that feeling my whole life.</p>
+
+      <h2>What I Checked Out</h2>
+
+      <p>From elementary school all the way through high school, almost everything I carried out of the library was mythology, fairy tales, or folklore. Nobody assigned it. That was just where I went. Everything else I picked was science fiction and fantasy too. The movies, the paperbacks, even the magazines. I was an avid Dragon magazine reader.</p>
+
+      <p>I did not think of it as research, because it wasn't. But there is not much difference, at that age, between reading everything in one section of a library and studying it.</p>
+
+      <p>I probably read The Crystal Cave by Mary Stewart a dozen times, and her whole series about Merlin was fantastic fuel. The Misenchanted Sword by Lawrence Watt-Evans sent me down his path and I read everything he published. He is probably my favorite author.</p>
+
+      <h2>Stuck Behind the Screen</h2>
+
+      <figure>
+        <img src="images/DandD.png" alt="An adventuring party of a wizard, cleric, warrior, rogue and sorcerer fighting skeletons and a goblin in a torchlit dungeon corridor">
+        <figcaption>Somebody has to run the table. For most of my teenage years, that somebody was me.</figcaption>
+      </figure>
+
+      <p>Then came Dungeons &amp; Dragons, and I usually got stuck being the DM.</p>
+
+      <p>I say stuck, but I never really minded. Being the DM meant I controlled the story. It meant I got to spin my own tales instead of walking through someone else's, and it meant doing it live, in front of people who could tell right away whether it was working.</p>
+
+      <p>That is where I actually learned to tell a story. Not in a class and not out of a book about writing. I learned it from a table of friends who would wander off in the wrong direction the second I got attached to a plan, and from having to make the wrong direction interesting anyway. A novel gives you time to go back and fix things. A game does not. You find out fast what holds people and what does not.</p>
+
+      <p>One of my favorite sessions came out of Dragon magazine. It was "The Dancing Hut" by Roger E. Moore, from issue 83, though we only ever called it Baba Yaga's hut. To this day I can remember my players subduing those giant chicken legs to get the thing to lower to the ground. "No Scott, you can't cut off the legs and barbecue them!" It was a blast.</p>
+
+      <h2>Sheffield Opened a Door I Did Not Know Was There</h2>
+
+      <p>When I finally sat down to write a novel, what came out was science fiction. Sheffield is a sci-fi story and it is entirely my own. No source tale underneath it, nothing borrowed. I built it from scratch and I was happy there.</p>
+
+      <p>But books have a way of shaking other books loose. Ideas started spinning off it faster than I could use them, and chasing those ideas meant digging back through my own roots to figure out what actually made me tick. That is when I found the fantasy sitting underneath everything, where it had been the whole time.</p>
+
+      <h2>Tatterhood</h2>
+
+      <figure>
+        <img src="images/Tatterhood.png" alt="A wild-haired figure riding a goat and swinging a wooden spoon, with a calm young woman standing beside a tree and a castle in the distance">
+        <figcaption>Tatterhood: the story I could not believe I had missed, and the one that sent me looking for the next.</figcaption>
+      </figure>
+
+      <p>I was surprised when I saw how closely the story of the 1998 Pixar film A Bug's Life borrowed from the 1954 Kurosawa film Seven Samurai. I set out to find some obscure story that I could try to do the same thing with, and that led me to Tatterhood.</p>
+
+      <p>I could not believe I had never heard of it. Here was this fantastic story, complete and strange and sitting right out in the open, and it had somehow gotten past me for my entire reading life. That happens more than you would expect with folklore. A handful of tales get retold until they are basically wallpaper, and everything else waits on the shelf.</p>
+
+      <p>I knew right away that I wanted to retell it. The hard part was the balance. I wanted a modern twist, but I did not want to bury the original underneath it. Change too much and you have written something else and lost the reason you started. Change too little and you have just retyped a story that already exists. Somewhere in between is a version a reader who knows Tatterhood will recognize, and a reader who has never heard of it will not need to.</p>
+
+      <p>Tatwitt guided me through the whole thing. By the time she had finished telling me her story, I already knew I wanted to do it again.</p>
+
+      <h2>The One Who Went Forth to Learn What Fear Was</h2>
+
+      <figure>
+        <img src="images/Fear.png" alt="A young traveler with a walking staff facing a towering hooded figure of smoke and shadow on a mountain path">
+        <figcaption>The Grimm tale sitting under The Emotion Engine: a young man who goes out looking for a feeling he has never had.</figcaption>
+      </figure>
+
+      <p>So I went hunting for another obscure one, and I found The Story of the Youth Who Went Forth to Learn What Fear Was, from the Brothers Grimm.</p>
+
+      <p>A boy who cannot feel fear leaves home specifically to learn how. Everyone around him assumes something is broken in him. He does not especially think so. He just wants to find out what this thing is that everybody else keeps talking about.</p>
+
+      <p>That is the spine of The Emotion Engine.</p>
+
+      <p>It is buried deeper this time. With Tatwitt I wanted the original showing through the seams. Here I let it sink further under the surface. Some pieces are obvious once you know to look for them. Others are not, and I am fine with that. Nobody should read The Emotion Engine and feel like they missed a footnote. But if you happen to know the Grimm story, there are things in there waiting for you.</p>
+
+      <p>I am having a blast with this one.</p>
+
+      <h2>Still on the Shelf</h2>
+
+      <p>There are more of these than I am going to get to.</p>
+
+      <p>I want to write a D&amp;D type book, and I have wanted to since back when I was the one running the table. I want to build my own fairy tales instead of borrowing them and see whether I can make something feel that old from scratch. I want to write a vampire story, and I already have the bones of that one, but there are more pressing books ahead of it in line. And I want to write about my faith in Jesus, which is its own kind of old story and its own kind of hard.</p>
+
+      <p>For now my head is down and my fingers are on the keyboard, and The Emotion Engine is the only thing in front of me. It is still on track for November 2026.</p>
+
+      <p>Once it is finished though, I doubt it will be long. There is always another one out there that nobody has read in a hundred years, waiting for a fresh set of clothes.</p>
+
+      <p>Something new, from something old.</p>
+
+      <p class="signature">—Charles</p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="free-book.html" class="free-book-cta">Get the Free Novella →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
