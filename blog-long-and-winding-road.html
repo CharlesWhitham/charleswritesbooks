@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A week back home in Missouri: a Chiefs overtime game, the best BBQ of my life, six classes at my old high school, and fifty books sold at Basement Books KC in Liberty.">
+  <title>The Long and Winding Road — Charles Whitham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rajdhani:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #c9a84c; --gold-light: #e8c97a; --dark: #0a0a0a; --dark-2: #111111;
+      --dark-3: #1a1a1a; --text: #e8e0d0; --text-muted: #9a9080;
+      --border: rgba(201,168,76,0.2); --border-solid: rgba(201,168,76,0.35); --nav-height: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: var(--text); font-family: 'Crimson Pro', Georgia, serif; font-size: 20px; line-height: 1.85; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; height: var(--nav-height); background: rgba(10,10,10,0.96); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; }
+    .nav-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .nav-back { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); transition: color 0.2s; }
+    .nav-back:hover { color: var(--gold); }
+    .article-header { padding-top: calc(var(--nav-height) + 5rem); padding-bottom: 4rem; background: var(--dark-2); border-bottom: 1px solid var(--border); }
+    .article-header-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-label { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .article-title { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 700; line-height: 1.05; color: var(--text); margin-bottom: 1.5rem; }
+    .article-subtitle { font-size: 22px; color: #b8b0a0; font-style: italic; line-height: 1.7; margin-bottom: 2rem; }
+    .article-meta { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+    .article-date, .article-author { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
+    .article-divider { width: 1px; height: 14px; background: var(--border-solid); }
+    .article-body { padding: 5rem 0 7rem; }
+    .article-body-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; }
+    .article-body p { margin-bottom: 1.75rem; color: #c8c0b0; }
+    .article-body p a { color: var(--gold); border-bottom: 1px solid var(--border-solid); transition: color 0.2s, border-color 0.2s; }
+    .article-body p a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+    .article-body .lead { font-size: 22px; color: #d8d0c0; font-style: italic; line-height: 1.75; margin-bottom: 2.5rem; }
+    .article-body .signature { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--gold); margin-top: 2.5rem; }
+    figure { margin: 2.5rem 0; border: 1px solid rgba(201,168,76,0.2); }
+    figure img { width: 100%; display: block; filter: brightness(0.92); }
+    figure.portrait { max-width: 520px; margin-left: auto; margin-right: auto; }
+    figcaption { font-family: 'Rajdhani', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #9a9080; padding: 0.75rem 1rem; border-top: 1px solid rgba(201,168,76,0.2); }
+    .article-footer { background: var(--dark-2); border-top: 1px solid var(--border); padding: 4rem 0; }
+    .article-footer-inner { max-width: 780px; margin: 0 auto; padding: 0 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+    .back-btn { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); border: 1px solid var(--border-solid); padding: 14px 24px; transition: background 0.2s; }
+    .back-btn:hover { background: rgba(201,168,76,0.1); }
+    .free-book-cta { font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; padding: 15px 28px; background: var(--gold); color: #0a0a0a; transition: background 0.2s; }
+    .free-book-cta:hover { background: var(--gold-light); }
+    footer { background: #050505; border-top: 1px solid var(--border); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+    .footer-logo { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); font-family: 'Rajdhani', sans-serif; letter-spacing: 0.05em; }
+    @media (max-width: 768px) {
+      #navbar { padding: 0 1.75rem; }
+      .article-header-inner, .article-body-inner, .article-footer-inner { padding: 0 1.75rem; }
+      .article-title { font-size: 38px; }
+      footer { padding: 2rem 1.75rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+  <!-- Umami Analytics -->
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="f56986d2-67fe-4632-ba61-cb0809628ed9"></script>
+</head>
+<body>
+
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">Charles Whitham</a>
+    <a href="index.html#blog" class="nav-back">← Back to Blog</a>
+  </nav>
+
+  <header class="article-header">
+    <div class="article-header-inner">
+      <div class="article-label">From the Desk &nbsp;·&nbsp; Homecoming</div>
+      <h1 class="article-title">The Long and Winding Road</h1>
+      <p class="article-subtitle">The trip back home and all that happened.</p>
+      <div class="article-meta">
+        <span class="article-date">October 2, 2026</span>
+        <span class="article-divider"></span>
+        <span class="article-author">Charles Whitham</span>
+      </div>
+    </div>
+  </header>
+
+  <article class="article-body">
+    <div class="article-body-inner">
+
+      <p class="lead">OK, let's get this part out of the way. I'm sorry this post is late. I've been jet-lagged, I went right back to work, and I've been putting things away from the trip. Needless to say, I hit the ground running.</p>
+
+      <p>I'll include as much detail as I can about the trip. I hope it's enough that you'll all feel like you came along with me.</p>
+
+      <p>I left Narita Airport at 6:30 PM on September 19th. The flight was smooth with very little turbulence. I had a layover in Dallas, and that didn't go so well. We arrived on time at 4:35 PM, still on the 19th (real-life Back to the Future stuff), but the flight to MCI in Kansas City was delayed. The gate changed six times. We finally left Dallas at 9:30 PM and landed at MCI at 11:16 PM. By the time I got my luggage and made it to the house of the friend I was staying with in Liberty, Missouri, it was after 12:10 AM on the 20th.</p>
+
+      <p>The 20th was the Chiefs game. One of my goals was to eat a footlong cheese coney from Sonic at least once, so I did that immediately. It was breakfast. After that I went to Arrowhead Stadium and tailgated with some new friends I'd met. I bought a bunch of stuff at the pro shop. The game was awesome, and it was my first time seeing an NFL overtime game in person. I'm not convinced the Chiefs are at Super Bowl level yet, but they look stronger than last year, and that's a relief.</p>
+
+      <figure>
+        <img src="images/arrowhead2026.jpg" alt="Arrowhead Stadium seen from the parking lot, with tailgaters and red tents set up in front">
+        <figcaption>Arrowhead on game day. Tailgates already going.</figcaption>
+      </figure>
+
+      <p>I spent the next three days eating and shopping. I bought so much Chiefs gear that my room looked like Arrowhead Stadium had exploded in it. Trying to fit it all into the suitcase at the end was chaos. Here are some highlights from those three days.</p>
+
+      <p>On Monday the 21st, I met my two sisters and one of my brothers for lunch at LongHorn Steakhouse in Liberty, Missouri. I love seeing them and was so happy they had time to meet me. That night I had BBQ at Three Halves, also in Liberty, with a friend, his family, and one of my cousins and his wife. I had the mac and cheese. It was so delicious!</p>
+
+      <p>On the 22nd I went shopping at Ross, Goodwill, and Hy-Vee, and had lunch with an old friend at Jack Stack. Dinner was Q39. Let me tell you something. Q39 was the best BBQ I have ever eaten in my whole life. I am from KC. I know something about BBQ. Trust me, if you ever have the chance to eat at Q39, make it a priority.</p>
+
+      <figure class="portrait">
+        <img src="images/Q39.jpg" alt="The front entrance of Q39, a white building with the Q39 sign and the words BBQ, Wood Fired Grill, Bar">
+        <figcaption>Q39. Remember the name.</figcaption>
+      </figure>
+
+      <figure class="portrait">
+        <img src="images/Q39Plate.jpg" alt="A plate of BBQ chicken with sides of baked beans and corn and a cup of BBQ sauce">
+        <figcaption>The evidence.</figcaption>
+      </figure>
+
+      <p>On the 23rd I had lunch with two of my aunts at Wabash BBQ in Excelsior Springs, my hometown. After lunch, my aunts took me to visit my mother's grave. It was my first time there, because Covid restrictions kept me from coming back for the funeral. Later I shopped at Target and Walmart. That evening I met friends at Stroud's in Liberty, and afterward I visited a dear friend's house by the lake. We saw some deer and drove around the lake on a golf cart. We talked about his brother who had passed and shared our sorrow over losing him.</p>
+
+      <figure class="portrait">
+        <img src="images/deer.jpg" alt="Two deer standing on the grass at the edge of a parking lot at night">
+        <figcaption>A couple of locals came out to say hello.</figcaption>
+      </figure>
+
+      <p>The next day was my speech at my old high school in Excelsior Springs. The night before, I had a small panic. I had bought some Posca pens to sign the outside of some of the books, but I forgot to pack them. They were still sitting on my desk back in Japan. I donated a copy of each novel to the school, and when I signed them, I made do with some Sharpie gel pens and signed the inside of the books instead.</p>
+
+      <p>I want to slow down here and relive this as best I can, because it was surreal. I arrived at the school at 8 AM. Walking in for the first time in years felt strange. The school had been completely remodeled, and a lot of it was different. It was homecoming, so the hallways were decorated for the occasion. There were six speaking sessions with roughly 130 students in total. In each one I asked how many of them couldn't wait to get out of Excelsior, and most of them raised their hands every time. That made me laugh. What surprised me was that most of the questions were about my books, not Japan. I didn't expect that.</p>
+
+      <figure>
+        <img src="images/schoolspeaking.jpg" alt="Charles speaking to a class of students in the high school library, with a slide on the screen behind him">
+        <figcaption>Six sessions, roughly 130 students.</figcaption>
+      </figure>
+
+      <p>The school treated me to pizza for lunch (thank you very much if you're reading this!), and I signed the donated copies in the last class. I was happy that Miranda Jamison from the Standard and Jason Cole from the Excelsior Citizen came to the event and covered it in their papers. Thank you both so much! There was a Sonic nearby, so I had another footlong cheese coney, just because. That night I had dinner with a few close friends at a friend's house, and we talked about music, family, and life.</p>
+
+      <figure class="portrait">
+        <img src="images/schoolsigning.jpg" alt="Charles wearing a visitor badge, signing the inside of a copy of Tatwitt at a table in the school library">
+        <figcaption>Signing the copies I donated to the school. No Posca pens, so inside it was.</figcaption>
+      </figure>
+
+      <p>The next day, the 25th, was my book signing. I was surprised to get an email from a student from the high school talk, sent through the contact form on this website. I went to Liberty, where the Fall Festival was in full swing on the square, and set up the signing table at Basement Books KC. Then I got busy selling books. It was exciting. I sold four books before the event even started. A lot of people came, including a student from the high school the day before. I brought sixty books to the signing and left with only ten. I sold fifty books! I almost cried when I realized how well it went.</p>
+
+      <figure class="portrait">
+        <img src="images/signingBBKC2026.jpg" alt="Charles signing a copy of Sheffield at a table in Basement Books KC, with copies of Tatwitt and Sheffield on display">
+        <figcaption>Signing Sheffield at Basement Books KC in Liberty.</figcaption>
+      </figure>
+
+      <p>The next day I said goodbye to Kansas City and headed back to Japan. My flight out of Dallas was delayed five hours, so I ate these awesome nachos. I finally got home on the evening of the 27th, exhausted.</p>
+
+      <figure class="portrait">
+        <img src="images/dallasnachos.jpg" alt="A tray of loaded nachos with chicken, black beans, guacamole, and queso on a bar counter">
+        <figcaption>Five hours in Dallas. These helped.</figcaption>
+      </figure>
+
+      <p>The trip was amazing, and I miss home already.</p>
+
+      <p>I'll try to be on time with the next post.</p>
+
+      <p>The Emotion Engine is being edited now and will release on schedule in November. If you're interested in beta reading it, send me a message through the <a href="index.html#contact">contact form</a> on this site and choose "Beta Reader" as the subject.</p>
+
+      <p>Thanks so much for reading!</p>
+
+      <p class="signature">—Charles</p>
+
+    </div>
+  </article>
+
+  <div class="article-footer">
+    <div class="article-footer-inner">
+      <a href="index.html#blog" class="back-btn">← Back to Blog</a>
+      <a href="free-book.html" class="free-book-cta">Get the Free Novella →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Whitham Press, Inc.</div>
+    <div class="footer-copy">© 2026 Charles Whitham. All rights reserved.</div>
+  </footer>
+
+</body>
+</html>
