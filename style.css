@@ -406,7 +406,7 @@ a { color: inherit; }
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding-top: calc(var(--nav-height) + 36px);
+  padding-top: var(--nav-height);
   position: relative;
 }
 
